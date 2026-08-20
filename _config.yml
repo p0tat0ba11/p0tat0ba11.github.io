@@ -3,6 +3,6 @@ email: p0t4t0b411@gmail.com
 github_username:  p0tat0ba11
 
 # Build settings
-theme: minima
+remote_theme: pages-themes/hacker@v0.2.0
 plugins:
   - jekyll-feed
