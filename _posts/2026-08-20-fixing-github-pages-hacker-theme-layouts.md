@@ -18,7 +18,7 @@ Build Warning: Layout 'home' requested in index.md does not exist.
 ```
 Your pages fail to render because the Jekyll engine cannot find the `home` or `page` layouts referenced in the front matter of `index.md`, `about.md`, or `404.html`.
 
-If we dive into the source code of [the official Hacker theme on GitHub](phttps://github.com/pages-themes/hacker), we can see that the `_layouts/` directory only contains two files:
+If we dive into the source code of [the official Hacker theme on GitHub](https://github.com/pages-themes/hacker), we can see that the `_layouts/` directory only contains two files:
 - `default.html`
 - `post.html`
 Because the theme does not ship with `home.html` or `page.html`, Jekyll falls back to rendering nothing for pages requesting those specific layouts.
