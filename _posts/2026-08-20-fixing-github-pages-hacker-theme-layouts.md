@@ -2,6 +2,7 @@
 layout: post
 title: "Fixing Missing Layout Errors in GitHub Pages Hacker Theme"
 date: 2026-08-20
+categories: tech
 tags: [Jekyll, GitHub Pages, Web Development]
 ---
 
