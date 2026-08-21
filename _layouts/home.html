@@ -5,12 +5,18 @@ layout: default
 {{ content }}
 
 {% if site.posts.size > 0 %}
-<h2>Posts</h2>
-<ul>
-    {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>  
-    {% endfor %}
-</ul>
+  {% for category in site.categories %}
+    {% assign category_name = category[0] %}
+    {% assign posts = category[1] %}
+
+    <h2>{{ category_name | capitalize }}</h2>
+    <ul>
+      {% for post in posts %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <span class="post-date">- {{ post.date | date: "%b %d, %Y" }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
 {% endif %}
