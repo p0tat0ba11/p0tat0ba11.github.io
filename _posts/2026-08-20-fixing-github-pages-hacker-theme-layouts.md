@@ -21,18 +21,21 @@ Your pages fail to render because the Jekyll engine cannot find the `home` or `p
 
 If we dive into the source code of [the official Hacker theme on GitHub](https://github.com/pages-themes/hacker), we can see that the `_layouts/` directory only contains two files:
 - `default.html`
-- `post.html`
+- `post.html`  
+
 Because the theme does not ship with `home.html` or `page.html`, Jekyll falls back to rendering nothing for pages requesting those specific layouts.
 
 To fix this, you can create the missing layout files in your local repository's `_layouts/` folder to override the missing layouts and inherit from `default.html`.
 1. Create a folder named `_layouts` in your project root if it doesn't already exist.
 2. Inside `_layouts/`, create two files: `home.html` and `page.html`.
-3. Add the following base code to both files:
+3. Add the following base code to both files:  
+
 ```html
 layout: default
 
-{{ content }}
-```
+{% raw %}{{content}}{% endraw %}
+``` 
+ 
 By wrapping your custom `page` and `home` layouts inside the theme's built-in default layout, Jekyll will properly wrap your Markdown content with the Hacker theme's global styles and structure.
 
 From here, you can customize `_layouts/page.html` and `_layouts/home.html` further to add sidebars, post lists, or metadata as needed.
